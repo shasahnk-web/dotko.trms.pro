@@ -973,28 +973,53 @@ header.scrolled {
 }
 
 .cta-form {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto 60px;
 }
 
 .form-group {
     display: grid;
     grid-template-columns: repeat(3, 1fr) auto;
-    gap: 20px;
+    gap: 15px;
+    background: white;
+    padding: 10px;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-lg);
 }
 
 .form-group input {
     padding: 16px 24px;
-    border: 1px solid var(--border);
+    border: 1px solid transparent;
+    background: var(--light-gray);
     border-radius: var(--radius-full);
-    font-size: 16px;
+    font-size: 15px;
     transition: var(--transition);
+    width: 100%;
 }
 
 .form-group input:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.1);
+    background: white;
+    box-shadow: none;
+}
+
+.form-group .btn-primary {
+    padding: 16px 30px;
+    white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+    .form-group {
+        grid-template-columns: 1fr;
+        border-radius: var(--radius-lg);
+        padding: 20px;
+    }
+    
+    .form-group input,
+    .form-group .btn-primary {
+        border-radius: var(--radius-md);
+    }
 }
 
 .form-note {
